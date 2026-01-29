@@ -3,7 +3,7 @@ class ApiConfig {
   static const String baseUrl = 'http://10.0.2.2:8001';
   
   // Base URL for images (assuming they're stored in storage/public/images)
-  static const String imageUrl = 'http://10.0.2.2:8001/uploads/artists/';
+  static const String imageUrl = '$baseUrl/uploads/artists/';
   
   // Authentication Endpoints
   static const String login = '/api/login';
