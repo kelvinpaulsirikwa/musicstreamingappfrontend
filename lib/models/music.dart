@@ -200,7 +200,7 @@ class Song {
 
   String get artistName => artist.stageName;
   String? get albumName => album?.title;
-  String get fullAudioUrl => audioFileUrl.isNotEmpty ? audioFileUrl : ApiConfig.getImageUrl(audioFile);
+  String get fullAudioUrl => audioFileUrl.isNotEmpty ? ApiConfig.getAudioUrl(audioFileUrl) : ApiConfig.getAudioUrl(audioFile);
 }
 
 class Category {

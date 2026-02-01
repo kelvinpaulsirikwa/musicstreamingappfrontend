@@ -274,7 +274,7 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 8),
                     Text(
                       _currentSong.artistName,
                       style: TextStyle(
@@ -282,9 +282,11 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
                         color: Colors.white.withOpacity(0.7),
                       ),
                       textAlign: TextAlign.center,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     if (_currentSong.albumName != null) ...[
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 4),
                       Text(
                         _currentSong.albumName!,
                         style: TextStyle(
@@ -292,6 +294,8 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
                           color: Colors.white.withOpacity(0.5),
                         ),
                         textAlign: TextAlign.center,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ],

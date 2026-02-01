@@ -1,9 +1,11 @@
 class ApiConfig {
-  // Base URL for your API
-  static const String baseUrl = 'http://10.0.2.2:8001';
+  static const String baseUrl = 'https://fcd711218bc3.ngrok-free.app';
   
   // Base URL for images (assuming they're stored in storage/public/images)
   static const String imageUrl = '$baseUrl/uploads/artists/';
+  
+  // Base URL for audio files
+  static const String audioUrl = '$baseUrl/storage/songs/';
   
   // Authentication Endpoints
   static const String login = '/api/login';
@@ -44,6 +46,21 @@ class ApiConfig {
     
     // Otherwise, prepend the image base URL
     return '$imageUrl$imagePath';
+  }
+  
+  // Get full audio URL
+  static String getAudioUrl(String? audioPath) {
+    if (audioPath == null || audioPath.isEmpty) {
+      return '';
+    }
+    
+    // If it's already a full URL, just ensure it's HTTPS
+    if (audioPath.startsWith('http')) {
+      return audioPath.replaceFirst('http://', 'https://');
+    }
+    
+    // Otherwise, prepend the audio base URL
+    return '$audioUrl$audioPath';
   }
   
   // Get headers with authorization token

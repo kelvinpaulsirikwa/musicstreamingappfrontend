@@ -358,7 +358,6 @@ class _HomePageState extends State<HomePage> {
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
-                        const SizedBox(height: 4),
                         Text(
                           album.artist.stageName,
                           style: TextStyle(
@@ -375,6 +374,8 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.grey[500],
                               fontSize: 11,
                             ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                       ],
                     ),
